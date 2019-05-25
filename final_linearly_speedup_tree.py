@@ -46,11 +46,13 @@ while machine_number <= 256:
 
     # w.append(www)
     machine_number = machine_number * 4
+print(w is list)
 
 my_result = open('final_linearly_speedup_result_tree.txt','w')
 w_result = open('final_linearly_speedup_result_tree_w.txt','w')
-json.dump(result, my_result)
 json.dump(w, w_result)
+json.dump(result, my_result)
+# json.dump(w, w_result)
 # for i in range(5):
 #     for j in range(len(result[0])-1):
 #         my_result.write(str(result[i][j])+',')

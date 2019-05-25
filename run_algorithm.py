@@ -283,7 +283,7 @@ def run_algorithm(mygraph, machine_number, sample_number, epsilon, delta, time_l
     #     resulttt.append(0)
 #    for T in time_list:
     for j in range(sample_number):
-        print(j)
+        # print(j)
         graph_meta_information = []     #sample mean, Lower bound, Upper bound observed times, unobserved times
         machine_meta_information = []   #which node, next time available
         node_available_time = []
