@@ -28,8 +28,8 @@ tree_max = 5000
 #     plt.plot(a,b,label = str(m)+' machines',lw=3)
 #
 #     m = m * 4
-aaa = [sum([result[0][j][i] for j in range(500)])/500 for i in range(1000)]
-plt.plot(range(1000),aaa)
+aaa = [sum([result[0][j][i] for j in range(500)])/500 for i in range(tree_max)]
+plt.plot(range(tree_max),aaa)
 # plt.xlabel('normalized time',size = 25)
 # plt.ylabel('error',size = 25)
 # plt.legend(loc='upper right',fontsize = 13)
