@@ -3,6 +3,7 @@ import run_algorithm
 import math
 import matplotlib.pyplot as plt
 from multiprocessing import Pool
+import json
 
 mygraph = graph()
 print(mygraph)
@@ -48,13 +49,15 @@ while machine_number <= 256:
 
 my_result = open('final_linearly_speedup_result_tree.txt','w')
 w_result = open('final_linearly_speedup_result_tree_w.txt','w')
-for i in range(5):
-    for j in range(len(result[0])-1):
-        my_result.write(str(result[i][j])+',')
-        w_result.write(str(w[i][j]) + ',')
-    my_result.write(str(result[i][len(result[0])-1])+'\n')
-    w_result.write(str(w[i][len(result[0]) - 1]) + '\n')
-my_result.close()
+json.dump(result, my_result)
+json.dump(w, w_result)
+# for i in range(5):
+#     for j in range(len(result[0])-1):
+#         my_result.write(str(result[i][j])+',')
+#         w_result.write(str(w[i][j]) + ',')
+#     my_result.write(str(result[i][len(result[0])-1])+'\n')
+#     w_result.write(str(w[i][len(result[0]) - 1]) + '\n')
+# my_result.close()
     
 # for i in range(5):
 #     plt.plot(time_list,result[i],label = str(4**i) + ' machines',lw = 3)
