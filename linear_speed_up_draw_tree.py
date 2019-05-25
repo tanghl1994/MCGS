@@ -3,8 +3,8 @@ import json
 
 plt.figure(figsize = (12,6))
 plt.subplot(1,2,1)
-file_name_tree = 'final_linearly_speedup_result_tree.txt'
-w_tree = 'final_linearly_speedup_result_tree_w.txt'
+file_name_tree = '../final_linearly_speedup_result_tree.txt'
+w_tree = '../final_linearly_speedup_result_tree_w.txt'
 wp = open(w_tree, 'r')
 fp = open(file_name_tree, 'r')
 # wp = open(w_tree, 'r')

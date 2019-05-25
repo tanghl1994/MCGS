@@ -48,8 +48,8 @@ while machine_number <= 256:
     machine_number = machine_number * 4
 print(type(w))
 
-my_result = open('final_linearly_speedup_result_tree.txt','w')
-w_result = open('final_linearly_speedup_result_tree_w.txt','w')
+my_result = open('../final_linearly_speedup_result_tree.txt','w')
+w_result = open('../final_linearly_speedup_result_tree_w.txt','w')
 json.dump(w, w_result)
 json.dump(result, my_result)
 # json.dump(w, w_result)
