@@ -42,7 +42,7 @@ while machine_number <= 256:
     # result.append(resulttt)
 
     # w.append(www)
-    machine_number t= machine_number * 4
+    machine_number = machine_number * 4
 
 my_result = open('final_linearly_speedup_result_tree.txt','w')
 w_result = open('final_linearly_speedup_result_tree_w.txt','w')
