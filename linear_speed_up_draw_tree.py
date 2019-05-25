@@ -12,7 +12,7 @@ w = json.load(wp)
 result = json.load(fp)
 # w = json.load(wp)
 # f_tree = open(file_name_tree)
-tree_max = 10000
+tree_max = 5000
 # lines = f_tree.readlines()
 # m = 1
 # for k in range(5):
