@@ -36,13 +36,13 @@ while machine_number <= 256:
 
     # resulttt,www = run_algorithm.run_algorithm(mygraph, machine_number,sample_number,epsilon, delta, time_list, eta, gamma, a, 'paper',cm)
     for i in range(500):
-        result.append(result_c[i][0])
-        w.append(result_c[i][1])
+        result.append(result_c.get()[i][0])
+        w.append(result_c.get()[i][1])
 
     # result.append(resulttt)
 
     # w.append(www)
-    machine_number = machine_number * 4
+    machine_number t= machine_number * 4
 
 my_result = open('final_linearly_speedup_result_tree.txt','w')
 w_result = open('final_linearly_speedup_result_tree_w.txt','w')
