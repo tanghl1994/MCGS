@@ -151,10 +151,10 @@ def observe(mygraph, machine, compute_halfinterval,epsilon,delta,t,T,eta,gamma, 
             choosenext = mygraph.structure[choosenext][next_layer_lower.index(min(next_layer_lower))]
 
 
-    # if graph_meta_information[choosenext]['unobserved_times'] > eta*graph_meta_information[choosenext]['observed_times']:
-    #     machine_meta_information[machine]['node'] = -1
-    #     machine_meta_information[machine]['time_available'] = node_available_time[choosenext][0] + 0.000001
-    #     return -2
+    if graph_meta_information[choosenext]['unobserved_times'] > eta*graph_meta_information[choosenext]['observed_times']:
+        machine_meta_information[machine]['node'] = -1
+        machine_meta_information[machine]['time_available'] = node_available_time[choosenext][0] + 0.000001
+        return -2
     
     #update machine information
     machine_meta_information[machine]['node'] = choosenext
