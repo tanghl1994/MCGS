@@ -2,6 +2,7 @@ from graph_construction import graph
 import run_algorithm
 import math
 import matplotlib.pyplot as plt
+from multiprocessing import Pool
 
 mygraph = graph()
 print(mygraph)
@@ -22,8 +23,13 @@ result = []
 w = []
 machine_number = 1
 while machine_number <= 256:
-#a1 = run_algorithm.run_algorithm(mygraph, machine_number,sample_number,epsilon, delta, time_list, eta, gamma, a, 'paper',cm)
-#a2 = run_algorithm.run_algorithm(mytree, machine_number,sample_number,epsilon, delta, time_list, eta, gamma, a, 'paper',cm)
+
+    result_c = []
+    po = Pool(500)
+    for p in range(500):
+        result_c.append(po.apply_async(run_algorithm.run_algorithm, args=(mygraph, machine_number,sample_number,epsilon,
+                                                                   delta, time_list, eta, gamma, a, 'paper',cm)))
+
     resulttt,www = run_algorithm.run_algorithm(mygraph, machine_number,sample_number,epsilon, delta, time_list, eta, gamma, a, 'paper',cm)
     result.append(resulttt)
     w.append(www)
@@ -32,24 +38,24 @@ while machine_number <= 256:
 my_result = open('final_linearly_speedup_result_tree.txt','w')
 w_result = open('final_linearly_speedup_result_tree_w.txt','w')
 for i in range(5):
-    for j in range(len(time_list)-1):
+    for j in range(len(result[0])-1):
         my_result.write(str(result[i][j])+',')
         w_result.write(str(w[i][j]) + ',')
-    my_result.write(str(result[i][len(time_list)-1])+'\n')
-    w_result.write(str(w[i][len(time_list) - 1]) + '\n')
+    my_result.write(str(result[i][len(result[0])-1])+'\n')
+    w_result.write(str(w[i][len(result[0]) - 1]) + '\n')
 my_result.close()
     
-for i in range(5):
-    plt.plot(time_list,result[i],label = str(4**i) + ' machines',lw = 3)
-
-
-
-
-#plt.plot(time_list,a1,label = 'graph',lw = 3)
-#plt.plot(time_list,a2,label = 'tree',lw = 3)
-
-
-plt.xlabel("iterations",size = 21)
-plt.ylabel("error",size = 21)
-plt.legend(fontsize = 18)
-plt.savefig('final_linear_speed_up_tree.pdf')
+# for i in range(5):
+#     plt.plot(time_list,result[i],label = str(4**i) + ' machines',lw = 3)
+#
+#
+#
+#
+# #plt.plot(time_list,a1,label = 'graph',lw = 3)
+# #plt.plot(time_list,a2,label = 'tree',lw = 3)
+#
+#
+# plt.xlabel("iterations",size = 21)
+# plt.ylabel("error",size = 21)
+# plt.legend(fontsize = 18)
+# plt.savefig('final_linear_speed_up_tree.pdf')
