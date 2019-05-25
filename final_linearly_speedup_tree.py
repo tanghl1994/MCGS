@@ -37,7 +37,7 @@ while machine_number <= 256:
     # resulttt,www = run_algorithm.run_algorithm(mygraph, machine_number,sample_number,epsilon, delta, time_list, eta, gamma, a, 'paper',cm)
     for i in range(500):
         result.append(result_c[i].get()[0])
-        w.append(result_c.[i].get()[1])
+        w.append(result_c[i].get()[1])
 
     # result.append(resulttt)
 
