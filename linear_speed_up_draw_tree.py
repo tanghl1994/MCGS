@@ -12,7 +12,7 @@ w = json.load(wp)
 result = json.load(fp)
 # w = json.load(wp)
 # f_tree = open(file_name_tree)
-tree_max = 1000
+tree_max = 10000
 # lines = f_tree.readlines()
 # m = 1
 # for k in range(5):
@@ -28,12 +28,13 @@ tree_max = 1000
 #     plt.plot(a,b,label = str(m)+' machines',lw=3)
 #
 #     m = m * 4
-
+aaa = [sum([result[0][j][i] for j in range(500)])/500 for i in range(1000)]
+plt.plot(range(1000),aaa)
 # plt.xlabel('normalized time',size = 25)
 # plt.ylabel('error',size = 25)
 # plt.legend(loc='upper right',fontsize = 13)
 # #plt.savefig('speedup2.pdf')
-# plt.subplot(1,2,2)
+plt.subplot(1,2,2)
 #
 # f_tree.close()
 
@@ -41,7 +42,7 @@ tree_max = 1000
 
 x = [1,4,16,64,256]
 plt.plot(x,x,ms = 4,marker = 'o',label='ideal',lw=3)
-alist = [0.2,0.1,0.05]
+alist = [0.1,0.05,0.01,0.005]
 
 for a in alist:
     b = []

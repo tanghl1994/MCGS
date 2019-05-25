@@ -13,7 +13,7 @@ print(mygraph)
 sample_number = 1
 epsilon = 0.1
 delta = 0.1
-time_list = range(1000)
+time_list = range(10000)
 eta = 0.7
 gamma = 1
 #algo = 'paper'
