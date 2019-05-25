@@ -72,6 +72,7 @@ for a in alist:
         # w = [int(x) for x in w]
         bb = []
         for r in range(500):
+            print(a,k,r)
             for i in range(tree_max-1):
                 start = float(result[k+1][r][i])
                 end = float(result[k+1][r][i+1])
