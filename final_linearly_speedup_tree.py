@@ -9,7 +9,7 @@ print(mygraph)
 
 
 
-sample_number = 500
+sample_number = 1
 epsilon = 0.1
 delta = 0.1
 time_list = range(1000)
@@ -25,8 +25,8 @@ machine_number = 1
 while machine_number <= 256:
 
     result_c = []
-    po = Pool(500)
-    for p in range(500):
+    po = Pool(100)
+    for p in range(100):
         result_c.append(po.apply_async(run_algorithm.run_algorithm, args=(mygraph, machine_number,sample_number,epsilon,
                                                                    delta, time_list, eta, gamma, a, 'paper',cm)))
 
