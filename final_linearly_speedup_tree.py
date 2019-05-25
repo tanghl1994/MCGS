@@ -30,13 +30,13 @@ while machine_number <= 256:
     result_c = []
 
     for co in range(5):
+        print(co)
         po = Pool(100)
         for p in range(100):
             result_c.append(po.apply_async(run_algorithm.run_algorithm, args=(mygraph, machine_number,sample_number,epsilon,
                                                                        delta, time_list, eta, gamma, a, 'paper',cm)))
         po.close()
         po.join()
-
     # resulttt,www = run_algorithm.run_algorithm(mygraph, machine_number,sample_number,epsilon, delta, time_list, eta, gamma, a, 'paper',cm)
     for i in range(500):
         result[-1].append(result_c[i].get()[0])
