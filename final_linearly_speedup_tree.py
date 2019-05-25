@@ -25,14 +25,23 @@ machine_number = 1
 while machine_number <= 256:
 
     result_c = []
-    po = Pool(100)
-    for p in range(100):
-        result_c.append(po.apply_async(run_algorithm.run_algorithm, args=(mygraph, machine_number,sample_number,epsilon,
-                                                                   delta, time_list, eta, gamma, a, 'paper',cm)))
 
-    resulttt,www = run_algorithm.run_algorithm(mygraph, machine_number,sample_number,epsilon, delta, time_list, eta, gamma, a, 'paper',cm)
-    result.append(resulttt)
-    w.append(www)
+    for co in range(5):
+        po = Pool(100)
+        for p in range(100):
+            result_c.append(po.apply_async(run_algorithm.run_algorithm, args=(mygraph, machine_number,sample_number,epsilon,
+                                                                       delta, time_list, eta, gamma, a, 'paper',cm)))
+        po.close()
+        po.join()
+
+    # resulttt,www = run_algorithm.run_algorithm(mygraph, machine_number,sample_number,epsilon, delta, time_list, eta, gamma, a, 'paper',cm)
+    for i in range(500):
+        result.append(result_c[i][0])
+        w.append(result_c[i][1])
+
+    # result.append(resulttt)
+
+    # w.append(www)
     machine_number = machine_number * 4
 
 my_result = open('final_linearly_speedup_result_tree.txt','w')
