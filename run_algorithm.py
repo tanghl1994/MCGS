@@ -241,7 +241,7 @@ def parallel_BAI(mygraph, machine_number, algorithm, ifoutput, epsilon,delta,tim
         m = observe(mygraph, machine,compute_halfinterval,epsilon,delta,t,time_list[i]+tt,eta,gamma, machine_number,a,cm)
         if m > 0:
             output = m
-            resulttt[i] += mygraph.node_value[0] - mygraph.node_value[output]
+            resulttt.append(mygraph.node_value[0] - mygraph.node_value[output])
             w.append(machine)
             i = i + 1
             if i == len(time_list):
@@ -279,8 +279,8 @@ def run_algorithm(mygraph, machine_number, sample_number, epsilon, delta, time_l
     stop_time = 0
     resulttt = []
     w = []
-    for T in time_list:
-        resulttt.append(0)
+    # for T in time_list:
+    #     resulttt.append(0)
 #    for T in time_list:
     for j in range(sample_number):
         print(j)

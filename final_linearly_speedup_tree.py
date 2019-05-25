@@ -11,7 +11,7 @@ print(mygraph)
 sample_number = 500
 epsilon = 0.1
 delta = 0.1
-time_list = range(130)
+time_list = range(1000)
 eta = 0.7
 gamma = 1
 #algo = 'paper'
@@ -30,7 +30,7 @@ while machine_number <= 256:
     machine_number = machine_number * 4
 
 my_result = open('final_linearly_speedup_result_tree.txt','w')
-w_result = open('final_linearly_speedup_result_graph_w.txt','w')
+w_result = open('final_linearly_speedup_result_tree_w.txt','w')
 for i in range(5):
     for j in range(len(time_list)-1):
         my_result.write(str(result[i][j])+',')
