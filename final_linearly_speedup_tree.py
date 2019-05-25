@@ -46,7 +46,7 @@ while machine_number <= 256:
 
     # w.append(www)
     machine_number = machine_number * 4
-print(w is list)
+print(type(w))
 
 my_result = open('final_linearly_speedup_result_tree.txt','w')
 w_result = open('final_linearly_speedup_result_tree_w.txt','w')
